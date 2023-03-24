@@ -1,6 +1,6 @@
 <template>
-    <div class="sortBar">
-      <div class="sortByType">
+    <div class="sort_bar_Container">
+      <div class="sort_by_type">
         <a href="/">Все типы</a>
         <a href="/">Прямые продажи</a>
         <a href="/">Аукцион</a>
@@ -22,12 +22,13 @@ export default defineComponent({
 
 <style scoped>
 
-.sortBar {
+.sort_bar_Container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
-.sortByType {
+.sort_by_type {
   background-color: #F4F5F9;
   border: 1px solid #E0E3EE;
   border-radius: 10px;
@@ -38,7 +39,7 @@ export default defineComponent({
   column-gap: 7px;
 }
 
-.sortByType a {
+.sort_by_type a {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;
   font-size: 15px;

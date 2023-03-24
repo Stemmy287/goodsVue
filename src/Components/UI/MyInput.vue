@@ -1,18 +1,19 @@
 <template>
   <div class="input_container">
     <input class="input" type="text">
-    <div class="icon">
-      <BaseIcon name="inputButton"/>
-    </div>
+    <my-button class="icon">
+      <BaseIcon name="magnifier"/>
+    </my-button>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
+import MyButton from "@/Components/UI/MyButton.vue";
 
 export default defineComponent({
-  components: {BaseIcon}
+  components: {MyButton, BaseIcon}
 })
 </script>
 
@@ -37,11 +38,7 @@ export default defineComponent({
   position: relative;
 }
 .icon {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 5px;
+  padding-top: 3px;
   height: 35px;
   width: 35px;
   background-color: #2D3B87;

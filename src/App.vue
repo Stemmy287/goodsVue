@@ -27,6 +27,7 @@ export default {
 
 .app_container {
   padding: 0 300px;
+  margin-bottom: 50px;
 }
 
 .content {
