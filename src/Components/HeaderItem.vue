@@ -1,0 +1,41 @@
+<template>
+  <div class="header_container">
+    <div class="head_line"></div>
+    <div class="nav_buttons">
+      <my-button><BaseIcon name="like"/>Избранное</my-button>
+      <my-button><BaseIcon name="stock"/>Склад</my-button>
+      <my-button><BaseIcon name="bag"/>Сделки</my-button>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import {defineComponent} from "vue";
+import MyButton from "@/Components/UI/MyButton.vue";
+import BaseIcon from "@/Components/UI/BaseIcon.vue";
+export default defineComponent({
+  components: {
+    BaseIcon,
+    MyButton
+  }
+})
+</script>
+
+<style scoped>
+.header_container {
+  margin-bottom: 100px;
+}
+
+.head_line {
+  height: 41px;
+  background-color: #E0E3EE;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 12px;
+}
+
+.nav_buttons {
+  display: flex;
+  column-gap: 5px;
+  justify-content: flex-end;
+}
+</style>
