@@ -1,6 +1,6 @@
 <template>
   <div class="input_container">
-    <input class="input" type="text">
+    <input :value="modelValue" @input="updateInput" class="input" type="text">
     <my-button class="icon">
       <BaseIcon name="magnifier"/>
     </my-button>
@@ -13,7 +13,15 @@ import BaseIcon from "@/Components/UI/BaseIcon.vue";
 import MyButton from "@/Components/UI/MyButton.vue";
 
 export default defineComponent({
-  components: {MyButton, BaseIcon}
+  components: {MyButton, BaseIcon},
+  props: {
+    modelValue: [String]
+  },
+  methods: {
+    updateInput(e: {currentTarget: {value: string}}) {
+      this.$emit('update:modelValue', e.currentTarget.value)
+    }
+  }
 })
 </script>
 

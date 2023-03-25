@@ -5,37 +5,32 @@
          alt="photoProduct">
     <div class="about_product">
       <div class="title_block">
-        <span class="type_of_sale">Аукцион</span>
-        <h2 class="title">Пиломатериалы брус доска</h2>
+        <span class="type_of_sale">{{product.typeOfSale}}</span>
+        <h2 class="title">{{product.title}}</h2>
       </div>
       <div class="info">
         <div class="geo">
           <BaseIcon name="geo"/>
-          Санкт-Петербург, Красное Село
+          {{product.geo}}
         </div>
-        <span class="sales_man">Продавец <b>Торговый Дом ГОСТ</b></span>
+        <span class="sales_man">Продавец <b>{{product.salesman}}</b></span>
         <div class="view_product">
           <span class="view">Вид товара</span>
-          <span class="view_name">Стройматериалы</span>
+          <span class="view_name">{{product.typeOfProduct}}</span>
         </div>
-        <p class="desc">Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ!
-          Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !
-          Мы стараемся быть не такими как все и даем вам: Доставка в согласованный день, если переносим - доставка
-          бесплатно за наш счет.
-          Весь материал соответствует гостам. Вы можете проверить пиломатериалы на складе или на адресе. Если материал
-          не соответствует заявленному качеству - бесплатно меняем его. </p>
+        <p class="desc">{{product.description}}</p>
       </div>
     </div>
     <div class="buy">
       <div class="price_info">
-        <h3 class="price">33 000 ₽</h3>
+        <h3 class="price">{{product.price}}</h3>
         <div class="price_for_count">
           <span>Количество</span>
-          <p>3 шт.</p>
+          <p>{{product.count}}</p>
         </div>
         <div class="price_for_count">
           <span>Стоимость за штуку</span>
-          <p>11 000 ₽</p>
+          <p>{{product.priceForItem}}</p>
         </div>
       </div>
       <div class="buy_buttons">
@@ -47,12 +42,19 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {defineComponent, PropType} from "vue";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 import MyButton from "@/Components/UI/MyButton.vue";
+import {ProductType} from "@/api/apiProducts";
 
 export default defineComponent({
-  components: {BaseIcon, MyButton}
+  components: {BaseIcon, MyButton},
+  props: {
+    product: {
+      type: Object as PropType<ProductType>,
+      required: true
+    }
+  }
 })
 </script>
 
