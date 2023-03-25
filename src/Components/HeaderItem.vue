@@ -2,9 +2,9 @@
   <div class="header_container">
     <div class="head_line"></div>
     <div class="nav_buttons">
-      <my-button><BaseIcon name="like"/>Избранное</my-button>
-      <my-button><BaseIcon name="stock"/>Склад</my-button>
-      <my-button><BaseIcon name="bag"/>Сделки</my-button>
+      <my-button :class="{checked_page: $route.path === '/favourite'}" @click="$router.push('/favourite')"><BaseIcon name="like"/>Избранное</my-button>
+      <my-button :class="{checked_page: $route.path === '/'}" @click="$router.push('/')"><BaseIcon name="stock"/>Склад</my-button>
+      <my-button :class="{checked_page: $route.path === '/deals'}" @click="$router.push('/deals')"><BaseIcon name="bag"/>Сделки</my-button>
     </div>
   </div>
 </template>
@@ -37,5 +37,8 @@ export default defineComponent({
   display: flex;
   column-gap: 5px;
   justify-content: flex-end;
+}
+.checked_page {
+  background-color: #F4F5F9;
 }
 </style>

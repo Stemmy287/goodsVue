@@ -7,6 +7,9 @@ const instance = axios.create({
 export const apiProducts = {
   getProducts(data: QueryParamsType) {
     return instance.get<{items: ProductType[]}>('items', {params: data})
+  },
+  updateProduct(data: ProductType, id: number) {
+    return instance.patch(`items/${id}`, data)
   }
 }
 

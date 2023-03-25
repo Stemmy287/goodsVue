@@ -1,6 +1,6 @@
 <template>
   <div class="stock_page_container">
-    <product-item v-for="product in sortedProductsByName" :key="product.id" :product="product"/>
+    <product-item v-for="product in stockPageItems" :key="product.id" :product="product"/>
   </div>
 
 </template>
@@ -9,7 +9,6 @@
 import {defineComponent} from "vue";
 import ProductItem from "@/Components/ProductItem.vue";
 import {mapActions, mapGetters, mapMutations, mapState} from "vuex";
-import {RootStateType} from "@/store/productModule";
 
 export default defineComponent({
   components: {
@@ -32,7 +31,7 @@ export default defineComponent({
       queryParams: (state: any) => state.products.queryParams
     }),
     ...mapGetters({
-      sortedProductsByName: 'products/sortedProductsByName'
+      stockPageItems: 'products/stockPageItems',
     })
   }
 })

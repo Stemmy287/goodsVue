@@ -5,37 +5,45 @@
          alt="photoProduct">
     <div class="about_product">
       <div class="title_block">
-        <span class="type_of_sale">{{product.typeOfSale}}</span>
-        <h2 class="title">{{product.title}}</h2>
+        <span class="type_of_sale">{{ product.typeOfSale }}</span>
+        <h2 class="title">{{ product.title }}</h2>
       </div>
       <div class="info">
         <div class="geo">
           <BaseIcon name="geo"/>
-          {{product.geo}}
+          {{ product.geo }}
         </div>
-        <span class="sales_man">Продавец <b>{{product.salesman}}</b></span>
+        <span class="sales_man">Продавец <b>{{ product.salesman }}</b></span>
         <div class="view_product">
           <span class="view">Вид товара</span>
-          <span class="view_name">{{product.typeOfProduct}}</span>
+          <span class="view_name">{{ product.typeOfProduct }}</span>
         </div>
-        <p class="desc">{{product.description}}</p>
+        <p class="desc">{{ product.description }}</p>
       </div>
     </div>
     <div class="buy">
       <div class="price_info">
-        <h3 class="price">{{product.price}}</h3>
+        <h3 class="price">{{ product.price }}</h3>
         <div class="price_for_count">
           <span>Количество</span>
-          <p>{{product.count}}</p>
+          <p>{{ product.count }}</p>
         </div>
         <div class="price_for_count">
           <span>Стоимость за штуку</span>
-          <p>{{product.priceForItem}}</p>
+          <p>{{ product.priceForItem }}</p>
         </div>
       </div>
       <div class="buy_buttons">
-        <my-button class="push_deals_btn">Добавить в сделки</my-button>
-        <my-button class="push_favourite_btn"><BaseIcon name="like"/></my-button>
+        <my-button
+            class="push_deals_btn"
+            @click="updateProduct({data: {deal: true}, id: product.id})"
+        >
+          Добавить в сделки
+        </my-button>
+        <my-button class="no_liked_favourite_btn" :class="{liked_favourite_btn: product.favorite}"
+                   @click="updateProduct({data: {favorite: !product.favorite}, id: product.id})">
+          <BaseIcon :favourite="product.favorite" name="like"/>
+        </my-button>
       </div>
     </div>
   </div>
@@ -46,6 +54,7 @@ import {defineComponent, PropType} from "vue";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 import MyButton from "@/Components/UI/MyButton.vue";
 import {ProductType} from "@/api/apiProducts";
+import {mapActions} from "vuex";
 
 export default defineComponent({
   components: {BaseIcon, MyButton},
@@ -54,6 +63,11 @@ export default defineComponent({
       type: Object as PropType<ProductType>,
       required: true
     }
+  },
+  methods: {
+    ...mapActions({
+      updateProduct: 'products/updateProduct'
+    })
   }
 })
 </script>
@@ -243,10 +257,17 @@ export default defineComponent({
   font-size: 15px;
 }
 
-.push_favourite_btn {
+.no_liked_favourite_btn {
   width: 20%;
   background-color: #F4F5F9;
   font-size: 15px;
+}
+
+.liked_favourite_btn {
+  background-color: #2D3B87;
+}
+.liked_favourite_btn_icon path {
+  background-color: mediumvioletred;
 }
 
 </style>

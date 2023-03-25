@@ -26,8 +26,8 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "deal": false,
+      "favorite": true,
+      "deal": true,
       "paid": false
     },
     {
@@ -41,8 +41,8 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": true,
-      "deal": false,
+      "favorite": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -56,8 +56,8 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "deal": false,
+      "favorite": true,
+      "deal": true,
       "paid": false
     },
     {
@@ -72,7 +72,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -87,7 +87,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -102,7 +102,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -117,7 +117,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -132,7 +132,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -162,7 +162,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -177,7 +177,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -192,7 +192,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -207,7 +207,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -222,7 +222,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -237,7 +237,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -252,7 +252,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {
@@ -282,7 +282,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favorite": false,
-      "deal": false,
+      "deal": true,
       "paid": false
     },
     {

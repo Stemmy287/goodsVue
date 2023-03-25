@@ -13,6 +13,9 @@ export const productModule = {
   getters: {
     sortedProductsByName(state: RootStateType) {
       return state.products.filter(ps => ps.title.toLowerCase().includes(state.localQueryParams.nameSearch.toLowerCase()))
+    },
+    stockPageItems(state: RootStateType, getters: { sortedProductsByName: ProductType[] }) {
+      return getters.sortedProductsByName.filter(ps => !ps.deal)
     }
   },
   mutations: {
@@ -28,7 +31,6 @@ export const productModule = {
   },
   actions: {
     async fetchProducts({state, commit}: any) {
-
       const queryParams = state.queryParams
 
       try {
@@ -37,8 +39,28 @@ export const productModule = {
       } catch (e) {
         alert('error')
       }
-    }
+    },
+    async updateProduct({
+                          state,
+                          commit,
+                          dispatch
+                        }: any, payload: { data: { "favorite": boolean, "deal": boolean, "paid": boolean }, id: number }) {
+
+      const product = state.products.find((pr: ProductType) => pr.id === payload.id)
+
+      if (!product) {
+        alert('product not found')
+      }
+      const modelUpdateData = {...product, ...payload.data}
+      try {
+        await apiProducts.updateProduct(modelUpdateData, payload.id)
+        dispatch('fetchProducts')
+      } catch (e) {
+        alert('error')
+      }
+    },
   },
+
   namespaced: true
 }
 
