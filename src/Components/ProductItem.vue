@@ -34,11 +34,19 @@
         </div>
       </div>
       <div class="buy_buttons">
-        <my-button
-            class="push_deals_btn"
-            @click="updateProduct({data: {deal: true}, id: product.id})"
+        <my-button v-if="$route.path === '/deals'"
+                   class="pay"
+                   :disabled="product.paid"
+                   @click="updateProduct({data: {paid: true}, id: product.id})"
         >
-          Добавить в сделки
+          {{ product.paid ? 'Оплачено' : 'Оплатить' }}
+        </my-button>
+        <my-button v-else
+                   class="push_deals_btn"
+                   :disabled="product.deal"
+                   @click="updateProduct({data: {deal: true}, id: product.id})"
+        >
+          {{ product.deal ? 'Добавлено в сделки' : 'Добавить в сделки' }}
         </my-button>
         <my-button class="no_liked_favourite_btn" :class="{liked_favourite_btn: product.favorite}"
                    @click="updateProduct({data: {favorite: !product.favorite}, id: product.id})">
@@ -257,6 +265,31 @@ export default defineComponent({
   font-size: 15px;
 }
 
+.push_deals_btn:disabled {
+  width: 80%;
+  font-size: 15px;
+  color: #969DC3;
+  background-color: #FFF;
+  border: 1px solid #E0E3EE;
+  cursor: default;
+}
+
+.pay {
+  width: 80%;
+  font-size: 15px;
+  color: #FFFFFF;
+  background-color: #69C57F;
+}
+
+.pay:disabled {
+  width: 80%;
+  font-size: 15px;
+  color: #969DC3;
+  background-color: #FFF;
+  border: 1px solid #E0E3EE;
+  cursor: default;
+}
+
 .no_liked_favourite_btn {
   width: 20%;
   background-color: #F4F5F9;
@@ -266,6 +299,7 @@ export default defineComponent({
 .liked_favourite_btn {
   background-color: #2D3B87;
 }
+
 .liked_favourite_btn_icon path {
   background-color: mediumvioletred;
 }

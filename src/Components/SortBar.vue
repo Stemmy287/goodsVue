@@ -22,8 +22,7 @@ export default defineComponent({
   methods: {
     ...mapMutations({
       setTypeOfSale: 'products/setTypeOfSale',
-      setNameSearch: 'products/setNameSearch',
-      setProducts: 'products/setProducts'
+      setNameSearch: 'products/setNameSearch'
     }),
     ...mapActions({
       fetchProducts: 'products/fetchProducts'

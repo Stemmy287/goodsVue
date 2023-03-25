@@ -14,8 +14,11 @@ export const productModule = {
     sortedProductsByName(state: RootStateType) {
       return state.products.filter(ps => ps.title.toLowerCase().includes(state.localQueryParams.nameSearch.toLowerCase()))
     },
-    stockPageItems(state: RootStateType, getters: { sortedProductsByName: ProductType[] }) {
-      return getters.sortedProductsByName.filter(ps => !ps.deal)
+    dealPageItem(state: RootStateType, getters: { sortedProductsByName: ProductType[] }) {
+      return getters.sortedProductsByName.filter(ps => ps.deal)
+    },
+    favouritePageItem(state: RootStateType, getters: { sortedProductsByName: ProductType[] }) {
+      return getters.sortedProductsByName.filter(ps => ps.favorite)
     }
   },
   mutations: {
