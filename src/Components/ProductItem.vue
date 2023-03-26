@@ -37,19 +37,19 @@
         <my-button v-if="$route.path === '/deals'"
                    class="pay"
                    :disabled="product.paid"
-                   @click="updateProduct({data: {paid: true}, id: product.id})"
+                   @click="updateDealProduct({data: {paid: true}, id: product.id})"
         >
           {{ product.paid ? 'Оплачено' : 'Оплатить' }}
         </my-button>
         <my-button v-else
                    class="push_deals_btn"
-                   :disabled="product.deal"
-                   @click="updateProduct({data: {deal: true}, id: product.id})"
+                   @click="createDealProduct(product)"
         >
-          {{ product.deal ? 'Добавлено в сделки' : 'Добавить в сделки' }}
+          Добавить в сделки
         </my-button>
-        <my-button class="no_liked_favourite_btn" :class="{liked_favourite_btn: product.favorite}"
-                   @click="updateProduct({data: {favorite: !product.favorite}, id: product.id})">
+        <my-button class="no_liked_favourite_btn"
+                   :class="{liked_favourite_btn: product.favorite}"
+                   @click="onLikeClick">
           <BaseIcon :favourite="product.favorite" name="like"/>
         </my-button>
       </div>
@@ -61,21 +61,30 @@
 import {defineComponent, PropType} from "vue";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 import MyButton from "@/Components/UI/MyButton.vue";
-import {ProductType} from "@/api/apiProducts";
+import {ProductDealType, ProductType} from "@/api/apiProducts";
 import {mapActions} from "vuex";
 
 export default defineComponent({
   components: {BaseIcon, MyButton},
   props: {
     product: {
-      type: Object as PropType<ProductType>,
+      type: Object as PropType<ProductDealType> || Object as PropType<ProductType>,
       required: true
     }
   },
   methods: {
     ...mapActions({
-      updateProduct: 'products/updateProduct'
-    })
+      updateProduct: 'products/updateProduct',
+      updateDealProduct: 'products/updateDealProduct',
+      createDealProduct: "products/createDealProduct"
+    }),
+    onLikeClick() {
+      if (typeof this.product['paid'] !== "undefined") {
+        this.updateDealProduct({data: {favorite: !this.product.favorite}, id: this.product.id})
+      } else {
+        this.updateProduct({data: {favorite: !this.product.favorite}, id: this.product.id})
+      }
+    }
   }
 })
 </script>
@@ -263,15 +272,6 @@ export default defineComponent({
   width: 80%;
   background-color: #F4F5F9;
   font-size: 15px;
-}
-
-.push_deals_btn:disabled {
-  width: 80%;
-  font-size: 15px;
-  color: #969DC3;
-  background-color: #FFF;
-  border: 1px solid #E0E3EE;
-  cursor: default;
 }
 
 .pay {

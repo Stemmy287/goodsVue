@@ -15,11 +15,13 @@ export default defineComponent({
   },
   methods: {
     ...mapActions({
-      fetchProducts: 'products/fetchProducts'
+      fetchProducts: 'products/fetchProducts',
+      fetchDealProducts: 'products/fetchDealProducts'
     }),
   },
   mounted() {
     this.fetchProducts()
+    this.fetchDealProducts()
   },
   computed: {
     ...mapGetters({

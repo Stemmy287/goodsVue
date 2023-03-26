@@ -1,8 +1,9 @@
-import {apiProducts, ProductType, QueryParamsType} from "@/api/apiProducts";
+import {apiProducts, ProductDealType, ProductType, QueryParamsType} from "@/api/apiProducts";
 
 export const productModule = {
   state: (): RootStateType => ({
     products: [] as ProductType[],
+    dealProducts: [] as ProductDealType[],
     queryParams: {
       typeOfSale: null
     },
@@ -14,16 +15,21 @@ export const productModule = {
     sortedProductsByName(state: RootStateType) {
       return state.products.filter(ps => ps.title.toLowerCase().includes(state.localQueryParams.nameSearch.toLowerCase()))
     },
-    dealPageItem(state: RootStateType, getters: { sortedProductsByName: ProductType[] }) {
-      return getters.sortedProductsByName.filter(ps => ps.deal)
+    sortedDealProductsByName(state: RootStateType) {
+      return state.dealProducts.filter(ps => ps.title.toLowerCase().includes(state.localQueryParams.nameSearch.toLowerCase()))
     },
-    favouritePageItem(state: RootStateType, getters: { sortedProductsByName: ProductType[] }) {
-      return getters.sortedProductsByName.filter(ps => ps.favorite)
+    favouritePageItem(state: RootStateType, getters: { sortedProductsByName: ProductType[], sortedDealProductsByName: ProductDealType[] }) {
+      const favouriteProducts = getters.sortedProductsByName.filter(ps => ps.favorite)
+      const favouriteDealProducts = getters.sortedDealProductsByName.filter(ps => ps.favorite)
+      return [...favouriteProducts, ...favouriteDealProducts]
     }
   },
   mutations: {
     setProducts(state: RootStateType, products: ProductType[]) {
       state.products = products
+    },
+    setDealProducts(state: RootStateType, dealProducts: ProductType[]) {
+      state.dealProducts = dealProducts
     },
     setTypeOfSale(state: RootStateType, typeOfSale: string | null) {
       state.queryParams.typeOfSale = typeOfSale
@@ -34,6 +40,7 @@ export const productModule = {
   },
   actions: {
     async fetchProducts({state, commit}: any) {
+
       const queryParams = state.queryParams
 
       try {
@@ -42,12 +49,33 @@ export const productModule = {
       } catch (e) {
         alert('error')
       }
+
     },
-    async updateProduct({
-                          state,
-                          commit,
-                          dispatch
-                        }: any, payload: { data: { "favorite": boolean, "deal": boolean, "paid": boolean }, id: number }) {
+    async fetchDealProducts({state, commit}: any) {
+
+      const queryParams = state.queryParams
+
+      try {
+        const res = await apiProducts.getDealProducts(queryParams)
+        commit('setDealProducts', res.data)
+      } catch (e) {
+        alert('error')
+      }
+
+    },
+    async createDealProduct({dispatch}: any, payload: ProductType) {
+
+      const dealProduct = {...payload, id: `${payload.id}_${payload.dealsCount + 1}` , paid: false, favorite: false}
+
+      try {
+        await apiProducts.createDealProduct(dealProduct)
+        dispatch('updateProduct', {data: {dealsCount: payload.dealsCount + 1}, id: payload.id})
+      } catch (e) {
+        alert('error')
+      }
+
+    },
+    async updateProduct({state, dispatch}: any, payload: { data: {favorite?: boolean, dealsCount?: number}, id: string }) {
 
       const product = state.products.find((pr: ProductType) => pr.id === payload.id)
 
@@ -62,6 +90,21 @@ export const productModule = {
         alert('error')
       }
     },
+    async updateDealProduct({state, dispatch}: any, payload: { data: {favorite?: boolean, paid?: boolean}, id: string }) {
+
+      const dealProducts = state.dealProducts.find((pr: ProductType) => pr.id === payload.id)
+
+      if (!dealProducts) {
+        alert('product not found')
+      }
+      const modelUpdateData = {...dealProducts, ...payload.data}
+      try {
+        await apiProducts.updateDealProduct(modelUpdateData, payload.id)
+        dispatch('fetchDealProducts')
+      } catch (e) {
+        alert('error')
+      }
+    },
   },
 
   namespaced: true
@@ -70,6 +113,7 @@ export const productModule = {
 //types
 export type RootStateType = {
   products: ProductType[]
+  dealProducts: ProductType[]
   queryParams: QueryParamsType
   localQueryParams: LocalQueryParamsType
 }

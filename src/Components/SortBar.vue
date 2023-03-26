@@ -25,7 +25,8 @@ export default defineComponent({
       setNameSearch: 'products/setNameSearch'
     }),
     ...mapActions({
-      fetchProducts: 'products/fetchProducts'
+      fetchProducts: 'products/fetchProducts',
+      fetchDealProducts: 'products/fetchDealProducts'
     })
   },
   computed: {
@@ -36,7 +37,14 @@ export default defineComponent({
   },
   watch: {
     typeOfSale() {
-      this.fetchProducts()
+      if (this.$route.path === '/deals') {
+        this.fetchDealProducts()
+      } else if (this.$route.path === '/favourite') {
+        this.fetchProducts()
+        this.fetchDealProducts()
+      } else {
+        this.fetchProducts()
+      }
     }
   }
 })

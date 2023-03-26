@@ -1,6 +1,6 @@
 <template>
   <div class="deals_page_container">
-    <product-item v-for="product in dealPageItem" :key="product.id" :product="product"/>
+    <product-item v-for="product in sortedDealProductsByName" :key="product.id" :product="product"/>
   </div>
 </template>
 
@@ -15,15 +15,15 @@ export default defineComponent({
   },
   methods: {
     ...mapActions({
-      fetchProducts: 'products/fetchProducts'
+      fetchDealProducts: 'products/fetchDealProducts'
     }),
   },
   mounted() {
-    this.fetchProducts()
+    this.fetchDealProducts()
   },
   computed: {
     ...mapGetters({
-      dealPageItem: 'products/dealPageItem',
+      sortedDealProductsByName: 'products/sortedDealProductsByName',
     })
   }
 })
