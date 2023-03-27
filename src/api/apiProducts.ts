@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 
 const instance = axios.create({
   baseURL: 'http://localhost:3000/'
@@ -8,24 +8,25 @@ export const apiProducts = {
   getProducts(data: QueryParamsType) {
     return instance.get<ProductType[]>('products', {params: data})
   },
+  updateProduct(data: ProductType, id: string) {
+    return instance.patch<'', AxiosResponse<ProductType>, ProductType>(`products/${id}`, data)
+  },
   getDealProducts(data: QueryParamsType) {
     return instance.get<ProductType[]>('dealProducts', {params: data})
   },
   createDealProduct(data: ProductDealType) {
-    return instance.post('dealProducts', data)
+    return instance.post<'', AxiosResponse<ProductDealType>, ProductDealType>('dealProducts', data)
   },
-  updateDealProduct(data: ProductType, id: string) {
-    return instance.patch(`dealProducts/${id}`, data)
+  updateDealProduct(data: ProductDealType, id: string) {
+    return instance.patch<'', AxiosResponse<ProductDealType>, ProductDealType>(`dealProducts/${id}`, data)
   },
-  updateProduct(data: ProductType, id: string) {
-    return instance.patch(`products/${id}`, data)
-  }
 }
 
 //types
 export type ProductType = {
   id: string
   title: string
+  img: string
   description: string
   salesman: string
   geo: string
@@ -42,4 +43,12 @@ export type ProductDealType = ProductType & {paid: boolean}
 
 export type QueryParamsType = {
   typeOfSale: string | null
+}
+
+export type UpdateProductType = {
+  data: {
+    paid?: boolean
+    favorite: boolean
+  }
+  id: string
 }

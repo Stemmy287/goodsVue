@@ -5,28 +5,30 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {computed, defineComponent, onMounted} from "vue";
 import ProductItem from "@/Components/ProductItem.vue";
-import {mapActions, mapGetters} from "vuex";
+import {useStore} from "vuex";
 
 export default defineComponent({
   components: {
     ProductItem
   },
-  methods: {
-    ...mapActions({
-      fetchProducts: 'products/fetchProducts',
-      fetchDealProducts: 'products/fetchDealProducts'
-    }),
-  },
-  mounted() {
-    this.fetchProducts()
-    this.fetchDealProducts()
-  },
-  computed: {
-    ...mapGetters({
-      favouritePageItem: 'products/favouritePageItem',
+
+  setup() {
+
+    const store = useStore()
+
+    const fetchProducts = () => store.dispatch('products/fetchProducts')
+    const fetchDealProducts = () => store.dispatch('products/fetchDealProducts')
+
+    const favouritePageItem = computed(() => store.getters["products/favouritePageItem"])
+
+    onMounted(() => {
+      fetchProducts()
+      fetchDealProducts()
     })
+
+    return {favouritePageItem}
   }
 })
 </script>

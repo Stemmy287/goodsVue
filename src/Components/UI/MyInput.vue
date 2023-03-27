@@ -1,26 +1,28 @@
 <template>
   <div class="input_container">
     <input :value="modelValue" @input="updateInput" class="input" type="text">
-    <my-button class="icon">
+    <div class="icon">
       <BaseIcon name="magnifier"/>
-    </my-button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
-import MyButton from "@/Components/UI/MyButton.vue";
 
 export default defineComponent({
-  components: {MyButton, BaseIcon},
+  components: {BaseIcon},
   props: {
     modelValue: [String]
   },
-  methods: {
-    updateInput(e: {currentTarget: {value: string}}) {
-      this.$emit('update:modelValue', e.currentTarget.value)
-    }
+
+  setup(_, {emit}) {
+
+    const updateInput = (e: {currentTarget: {value: string}}) => emit('update:modelValue', e.currentTarget.value)
+
+    return {updateInput}
+
   }
 })
 </script>
@@ -54,5 +56,8 @@ export default defineComponent({
   position: absolute;
   top: 3px;
   right: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

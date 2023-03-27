@@ -6,7 +6,6 @@
       <router-view></router-view>
     </div>
   </div>
-
 </template>
 
 <script lang="ts">
@@ -14,7 +13,7 @@ import HeaderItem from "@/Components/HeaderItem.vue";
 import SortBar from "@/Components/SortBar.vue";
 
 export default {
-  components: {HeaderItem, SortBar}
+  components: {HeaderItem, SortBar},
 }
 </script>
 
@@ -34,6 +33,4 @@ export default {
   display: flex;
   flex-direction: column;
 }
-
-
 </style>

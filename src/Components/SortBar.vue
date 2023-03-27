@@ -13,40 +13,54 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {computed, defineComponent, onMounted, watch} from "vue";
 import MyInput from "@/Components/UI/MyInput.vue";
-import {mapActions, mapMutations, mapState} from "vuex";
+import {useStore} from "vuex";
+import {useRoute} from "vue-router";
+
 
 export default defineComponent({
   components: {MyInput},
-  methods: {
-    ...mapMutations({
-      setTypeOfSale: 'products/setTypeOfSale',
-      setNameSearch: 'products/setNameSearch'
-    }),
-    ...mapActions({
-      fetchProducts: 'products/fetchProducts',
-      fetchDealProducts: 'products/fetchDealProducts'
-    })
-  },
-  computed: {
-    ...mapState({
-      typeOfSale: (state: any) => state.products.queryParams.typeOfSale,
-      nameSearch: (state: any) => state.products.localQueryParams.nameSearch,
-    })
-  },
-  watch: {
-    typeOfSale() {
-      if (this.$route.path === '/deals') {
-        this.fetchDealProducts()
-      } else if (this.$route.path === '/favourite') {
-        this.fetchProducts()
-        this.fetchDealProducts()
+
+  setup() {
+
+    const store = useStore()
+
+    const route = useRoute()
+
+    const typeOfSale = computed(() => store.state.products.queryParams.typeOfSale)
+    const nameSearch = computed(() => store.state.products.nameSearch)
+
+    const fetchProducts = () => store.dispatch('products/fetchProducts')
+    const fetchDealProducts = () => store.dispatch('products/fetchDealProducts')
+    const getFromLocalStorage = () => store.dispatch('products/getFromLocalStorage')
+
+    const setTypeOfSale = (typeOfSale: string | null) => store.commit('products/setTypeOfSale', typeOfSale)
+    const setNameSearch = (nameSearch: string) => store.commit('products/setNameSearch', nameSearch)
+
+    watch(typeOfSale, () => {
+      if (route.path === '/deals') {
+        fetchDealProducts()
+      } else if (route.path === '/favourite') {
+        fetchProducts()
+        fetchDealProducts()
       } else {
-        this.fetchProducts()
+        fetchProducts()
       }
+    })
+
+    onMounted(getFromLocalStorage)
+
+    return{
+      typeOfSale,
+      nameSearch,
+      setTypeOfSale,
+      setNameSearch
     }
-  }
+
+  },
+
+
 })
 </script>
 

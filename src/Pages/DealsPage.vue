@@ -5,26 +5,26 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {computed, defineComponent, onMounted} from "vue";
 import ProductItem from "@/Components/ProductItem.vue";
-import {mapActions, mapGetters} from "vuex";
+import {useStore} from "vuex";
 
 export default defineComponent({
   components: {
     ProductItem
   },
-  methods: {
-    ...mapActions({
-      fetchDealProducts: 'products/fetchDealProducts'
-    }),
-  },
-  mounted() {
-    this.fetchDealProducts()
-  },
-  computed: {
-    ...mapGetters({
-      sortedDealProductsByName: 'products/sortedDealProductsByName',
-    })
+
+  setup() {
+
+    const store = useStore()
+
+    const fetchDealProducts = () => store.dispatch('products/fetchDealProducts')
+
+    const sortedDealProductsByName = computed(() => store.getters["products/sortedDealProductsByName"])
+
+    onMounted(fetchDealProducts)
+
+    return {sortedDealProductsByName}
   }
 })
 </script>
