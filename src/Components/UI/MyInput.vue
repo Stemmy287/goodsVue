@@ -10,14 +10,15 @@
 <script setup lang="ts">
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 
-
 defineProps({
   modelValue: String
 })
 
 const emit = defineEmits(['update:modelValue'])
 
-const updateInput = (e: { currentTarget: { value: string } }) => emit('update:modelValue', e.currentTarget.value)
+const updateInput = (e: { currentTarget: { value: string } }) => {
+  emit('update:modelValue', e.currentTarget.value)
+}
 
 </script>
 

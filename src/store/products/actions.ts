@@ -8,7 +8,7 @@ export const actions: ActionTree<ProductModuleType, RootStateType> = {
   getFromLocalStorage({commit}) {
     const nameSearch = localStorage.getItem('nameSearch') as string
     const typeOfSale = JSON.parse(localStorage.getItem('typeOfSale') as string)
-    commit('setNameSearch', nameSearch)
+    commit('setNameSearch', nameSearch || '')
     commit('setTypeOfSale', typeOfSale)
   },
   async fetchProducts({state, commit}) {

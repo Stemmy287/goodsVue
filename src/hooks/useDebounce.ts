@@ -8,7 +8,6 @@ export const useDebounce = () => {
   const setNameSearch = (nameSearch: string) => {
 
     clearTimeout(timer)
-
     timer = setTimeout(() => {
       store.commit('products/setNameSearch', nameSearch)
     }, 750)
