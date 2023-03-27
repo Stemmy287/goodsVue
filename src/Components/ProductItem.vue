@@ -57,46 +57,34 @@
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent, PropType} from "vue";
+<script setup lang="ts">
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 import MyButton from "@/Components/UI/MyButton.vue";
 import {ProductDealType, ProductType, UpdateProductType} from "@/api/apiProducts";
 import {useStore} from "vuex";
+import {PropType} from "vue";
 
-export default defineComponent({
-  components: {BaseIcon, MyButton},
-  props: {
-    product: {
-      type: Object as PropType<ProductDealType>,
-      required: true
-    }
-  },
-
-  setup(props) {
-
-    const store = useStore()
-
-    const updateProduct = (payload: UpdateProductType) => store.dispatch('products/updateProduct', payload)
-    const updateDealProduct = (payload: UpdateProductType) => store.dispatch('products/updateDealProduct', payload)
-    const createDealProduct = (product: ProductType) => store.dispatch('products/createDealProduct', product)
-
-    const onLikeClick = () => {
-      if (typeof props.product['paid'] !== "undefined") {
-        updateDealProduct({data: {favorite: !props.product.favorite}, id: props.product.id})
-      } else {
-        updateProduct({data: {favorite: !props.product.favorite}, id: props.product.id})
-      }
-    }
-
-    return {
-      updateDealProduct,
-      createDealProduct,
-      onLikeClick
-    }
-
+// eslint-disable-next-line no-undef
+const props = defineProps({
+  product: {
+    type: Object as PropType<ProductDealType>,
+    required: true
   }
 })
+
+const store = useStore()
+
+const updateProduct = (payload: UpdateProductType) => store.dispatch('products/updateProduct', payload)
+const updateDealProduct = (payload: UpdateProductType) => store.dispatch('products/updateDealProduct', payload)
+const createDealProduct = (product: ProductType) => store.dispatch('products/createDealProduct', product)
+
+const onLikeClick = () => {
+  if (typeof props.product['paid'] !== "undefined") {
+    updateDealProduct({data: {favorite: !props.product.favorite}, id: props.product.id})
+  } else {
+    updateProduct({data: {favorite: !props.product.favorite}, id: props.product.id})
+  }
+}
 </script>
 
 <style scoped>

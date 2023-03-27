@@ -12,17 +12,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import {computed, defineComponent, onMounted, watch} from "vue";
+<script setup lang="ts">
+import {computed, onMounted, watch} from "vue";
 import MyInput from "@/Components/UI/MyInput.vue";
 import {useStore} from "vuex";
 import {useRoute} from "vue-router";
-
-
-export default defineComponent({
-  components: {MyInput},
-
-  setup() {
 
     const store = useStore()
 
@@ -51,17 +45,6 @@ export default defineComponent({
 
     onMounted(getFromLocalStorage)
 
-    return{
-      typeOfSale,
-      nameSearch,
-      setTypeOfSale,
-      setNameSearch
-    }
-
-  },
-
-
-})
 </script>
 
 <style scoped>

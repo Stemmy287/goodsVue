@@ -9,16 +9,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
+<script setup lang="ts">
 import MyButton from "@/Components/UI/MyButton.vue";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
-export default defineComponent({
-  components: {
-    BaseIcon,
-    MyButton
-  }
-})
 </script>
 
 <style scoped>

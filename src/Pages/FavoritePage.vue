@@ -4,17 +4,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import {computed, defineComponent, onMounted} from "vue";
+<script setup lang="ts">
+import {computed, onMounted} from "vue";
 import ProductItem from "@/Components/ProductItem.vue";
 import {useStore} from "vuex";
-
-export default defineComponent({
-  components: {
-    ProductItem
-  },
-
-  setup() {
 
     const store = useStore()
 
@@ -28,9 +21,6 @@ export default defineComponent({
       fetchDealProducts()
     })
 
-    return {favouritePageItem}
-  }
-})
 </script>
 
 <style scoped>

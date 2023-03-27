@@ -7,24 +7,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
+<script setup lang="ts">
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 
-export default defineComponent({
-  components: {BaseIcon},
-  props: {
-    modelValue: [String]
-  },
-
-  setup(_, {emit}) {
-
-    const updateInput = (e: {currentTarget: {value: string}}) => emit('update:modelValue', e.currentTarget.value)
-
-    return {updateInput}
-
-  }
+// eslint-disable-next-line no-undef
+defineProps({
+  modelValue: String
 })
+// eslint-disable-next-line no-undef
+const emit = defineEmits(['update:modelValue'])
+
+const updateInput = (e: { currentTarget: { value: string } }) => emit('update:modelValue', e.currentTarget.value)
+
 </script>
 
 <style scoped>
@@ -47,6 +41,7 @@ export default defineComponent({
   outline: none;
   position: relative;
 }
+
 .icon {
   padding-top: 3px;
   height: 35px;
