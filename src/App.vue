@@ -33,6 +33,12 @@ const isError = computed(() => store.state.products.isError)
   padding: 0 300px;
   margin-bottom: 50px;
 }
+@media screen and (max-width: 1550px){
+  .app_container {
+    padding: 0 150px;
+
+  }
+}
 
 .content {
   display: flex;

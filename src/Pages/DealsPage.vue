@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import {computed, onMounted} from "vue";
-import ProductItem from "@/Components/ProductItem.vue";
+import ProductItem from "@/Components/ProductItem/ProductItem.vue";
 import PreLoader from "@/Components/UI/PreLoader.vue";
 import {useStore} from "vuex";
 import NoItems from "@/Components/UI/NoItems.vue";

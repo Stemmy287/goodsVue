@@ -18,7 +18,7 @@ export const productModule: Module<RootStateType, RootStateType> = {
       return state.products.filter(ps => ps.title.toLowerCase().includes(state.nameSearch.toLowerCase()))
     },
     sortedDealProductsByName(state) {
-      return state.dealProducts.filter(ps => ps.title.toLowerCase().includes(state.nameSearch.toLowerCase()))
+      return state.dealProducts.reverse().filter(ps => ps.title.toLowerCase().includes(state.nameSearch.toLowerCase()))
     },
     favouritePageItem(state, getters: { sortedProductsByName: ProductType[], sortedDealProductsByName: ProductDealType[] }) {
       const favouriteProducts = getters.sortedProductsByName.filter(ps => ps.favorite)
