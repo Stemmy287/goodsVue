@@ -1,29 +1,8 @@
-# goods
+### for start app enter - yarn serve
 
-## Project setup
-```
-yarn install
-```
+### CRUD operations run only locally
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### for start local json-server enter - json-server info.json
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### page on vercel - https://goods-vue.vercel.app/ (only get requests)
 
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
