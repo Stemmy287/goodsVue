@@ -26,9 +26,9 @@
         Добавить в сделки
       </my-button>
       <my-button class="no_liked_favourite_btn"
-                 :class="{liked_favourite_btn: product.favorite}"
+                 :class="{liked_favourite_btn: product.favourite}"
                  @click="onLikeClick">
-        <BaseIcon :favourite="product.favorite" name="like"/>
+        <BaseIcon :favourite="product.favourite" name="like"/>
       </my-button>
     </div>
   </div>
@@ -59,9 +59,9 @@ const createDealProduct = (product: ProductType) => store.dispatch('products/cre
 
 const onLikeClick = () => {
   if (typeof props.product['paid'] !== "undefined") {
-    updateDealProduct({data: {favorite: !props.product.favorite}, id: props.product.id})
+    updateDealProduct({data: {favourite: !props.product.favourite}, id: props.product.id})
   } else {
-    updateProduct({data: {favorite: !props.product.favorite}, id: props.product.id})
+    updateProduct({data: {favourite: !props.product.favourite}, id: props.product.id})
   }
 }
 

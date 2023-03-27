@@ -12,7 +12,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 41
     },
     {
@@ -27,7 +27,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 4
     },
     {
@@ -42,7 +42,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 3
     },
     {
@@ -57,7 +57,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -72,7 +72,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -87,7 +87,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -102,7 +102,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -117,7 +117,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -132,7 +132,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -147,7 +147,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -162,7 +162,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -177,7 +177,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -192,7 +192,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -207,7 +207,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -222,7 +222,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -237,7 +237,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -252,7 +252,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -267,7 +267,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -282,7 +282,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     },
     {
@@ -297,138 +297,9 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": false,
+      "favourite": false,
       "dealsCount": 0
     }
   ],
-  "dealProducts": [
-    {
-      "id": "1_36",
-      "title": "Доски",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 35,
-      "paid": false
-    },
-    {
-      "id": "2_4",
-      "title": "доска",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 3,
-      "paid": false
-    },
-    {
-      "id": "1_37",
-      "title": "Доски",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 36,
-      "paid": false
-    },
-    {
-      "id": "1_38",
-      "title": "Доски",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 37,
-      "paid": false
-    },
-    {
-      "id": "1_39",
-      "title": "Доски",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 38,
-      "paid": false
-    },
-    {
-      "id": "1_40",
-      "title": "Доски",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 39,
-      "paid": false
-    },
-    {
-      "id": "3_3",
-      "title": "брус",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 2,
-      "paid": true
-    },
-    {
-      "id": "1_41",
-      "title": "Доски",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
-      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
-      "salesman": "Торговый Дом ГОСТ",
-      "geo": "Санкт-Петербург, Красное Село",
-      "typeOfProduct": "Стройматериалы",
-      "typeOfSale": "Разовая продажа",
-      "price": "33 000 ₽",
-      "count": 3,
-      "priceForItem": "11 000 ₽",
-      "favorite": false,
-      "dealsCount": 40,
-      "paid": false
-    }
-  ]
+  "dealProducts": []
 }

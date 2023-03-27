@@ -35,7 +35,7 @@ export type ProductType = {
   price: string
   count: number
   priceForItem: string
-  favorite: boolean
+  favourite: boolean
   dealsCount: number
 }
 
@@ -48,7 +48,7 @@ export type QueryParamsType = {
 export type UpdateProductType = {
   data: {
     paid?: boolean
-    favorite?: boolean
+    favourite?: boolean
     dealsCount?: boolean
   }
   id: string
