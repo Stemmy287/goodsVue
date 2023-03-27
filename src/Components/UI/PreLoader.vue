@@ -9,7 +9,7 @@ import {useStore} from "vuex";
 
 const store = useStore()
 
-const isLoading = computed(() => store.state.products.isLoading)
+const isLoading = computed(() => store.state.app.isLoading)
 
 </script>
 

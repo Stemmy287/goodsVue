@@ -15,7 +15,7 @@ import NoItems from "@/Components/UI/NoItems.vue";
 
 const store = useStore()
 
-const isLoading = computed(() => store.state.products.isLoading)
+const isLoading = computed(() => store.state.app.isLoading)
 
 const fetchProducts = () => store.dispatch('products/fetchProducts')
 

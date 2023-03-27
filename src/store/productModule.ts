@@ -1,13 +1,11 @@
-import {apiProducts, ProductDealType, ProductType, UpdateProductType} from "@/api/apiProducts";
+import {apiProducts, ProductDealType, ProductType, QueryParamsType, UpdateProductType} from "@/api/apiProducts";
 import {Module} from "vuex";
 import {RootStateType} from "@/store/index";
 
-export const productModule: Module<RootStateType, RootStateType> = {
+export const productModule: Module<ProductModuleType, RootStateType> = {
   state: () => ({
     products: [] as ProductType[],
     dealProducts: [] as ProductDealType[],
-    isLoading: false,
-    isError: null,
     queryParams: {
       typeOfSale: null
     },
@@ -40,12 +38,6 @@ export const productModule: Module<RootStateType, RootStateType> = {
     setNameSearch(state, nameSearch: string) {
       state.nameSearch = nameSearch
       localStorage.setItem('nameSearch', nameSearch)
-    },
-    setIsLoading(state, isLoading: boolean) {
-      state.isLoading = isLoading
-    },
-    setIsError(state, isError: string) {
-      state.isError = isError
     }
   },
   actions: {
@@ -57,7 +49,7 @@ export const productModule: Module<RootStateType, RootStateType> = {
     },
     async fetchProducts({state, commit}) {
 
-      commit('setIsLoading', true)
+      commit('app/setIsLoading', true, {root: true})
 
       const queryParams = state.queryParams
 
@@ -65,15 +57,15 @@ export const productModule: Module<RootStateType, RootStateType> = {
         const res = await apiProducts.getProducts(queryParams)
         commit('setProducts', res.data)
       } catch (e) {
-        commit('setIsError', 'Error')
+        commit('app/setIsError', 'Error', {root: true})
       } finally {
-        commit('setIsLoading', false)
+        commit('app/setIsLoading', false, {root: true})
       }
 
     },
     async updateProduct({state, commit, dispatch}: any, payload: UpdateProductType) {
 
-      commit('setIsLoading', true)
+      commit('app/setIsLoading', true, {root: true})
 
       const product = state.products.find((pr: ProductType) => pr.id === payload.id)
 
@@ -87,14 +79,14 @@ export const productModule: Module<RootStateType, RootStateType> = {
         await apiProducts.updateProduct(modelUpdateData, payload.id)
         dispatch('fetchProducts')
       } catch (e) {
-        commit('setIsError', 'Error')
+        commit('app/setIsError', 'Error', {root: true})
       } finally {
-        commit('setIsLoading', false)
+        commit('app/setIsLoading', false, {root: true})
       }
     },
     async fetchDealProducts({state, commit}) {
 
-      commit('setIsLoading', true)
+      commit('app/setIsLoading', true, {root: true})
 
       const queryParams = state.queryParams
 
@@ -102,15 +94,15 @@ export const productModule: Module<RootStateType, RootStateType> = {
         const res = await apiProducts.getDealProducts(queryParams)
         commit('setDealProducts', res.data)
       } catch (e) {
-        commit('setIsError', 'Error')
+        commit('app/setIsError', 'Error', {root: true})
       } finally {
-        commit('setIsLoading', false)
+        commit('app/setIsLoading', false, {root: true})
       }
 
     },
-    async createDealProduct({commit ,dispatch}, payload: ProductType) {
+    async createDealProduct({commit, dispatch}, payload: ProductType) {
 
-      commit('setIsLoading', true)
+      commit('app/setIsLoading', true, {root: true})
 
       const dealProduct = {...payload, id: `${payload.id}_${(payload.dealsCount + 1)}`, paid: false, favorite: false}
 
@@ -118,16 +110,16 @@ export const productModule: Module<RootStateType, RootStateType> = {
         await apiProducts.createDealProduct(dealProduct)
         dispatch('updateProduct', {data: {dealsCount: payload.dealsCount + 1}, id: payload.id})
       } catch (e) {
-        commit('setIsError', 'Error')
+        commit('app/setIsError', 'Error', {root: true})
       } finally {
-        commit('setIsLoading', false)
+        commit('app/setIsLoading', false, {root: true})
       }
 
     },
 
     async updateDealProduct({state, commit, dispatch}: any, payload: UpdateProductType) {
 
-      commit('setIsLoading', true)
+      commit('app/setIsLoading', true, {root: true})
 
       const dealProducts = state.dealProducts.find((pr: ProductType) => pr.id === payload.id)
 
@@ -140,13 +132,19 @@ export const productModule: Module<RootStateType, RootStateType> = {
         await apiProducts.updateDealProduct(modelUpdateData, payload.id)
         dispatch('fetchDealProducts')
       } catch (e) {
-        commit('setIsError', 'Error')
+        commit('app/setIsError', 'Error', {root: true})
       } finally {
-        commit('setIsLoading', false)
+        commit('app/setIsLoading', false, {root: true})
       }
 
     },
   },
-
   namespaced: true
+}
+
+export type ProductModuleType = {
+  products: ProductType[]
+  dealProducts: ProductType[]
+  queryParams: QueryParamsType
+  nameSearch: string
 }

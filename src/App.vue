@@ -18,7 +18,7 @@ import {useStore} from "vuex";
 
 const store = useStore()
 
-const isError = computed(() => store.state.products.isError)
+const isError = computed(() => store.state.app.isError)
 
 </script>
 

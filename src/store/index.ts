@@ -1,19 +1,13 @@
 import {createStore} from 'vuex'
-import {productModule} from "@/store/productModule";
-import {ProductType, QueryParamsType} from "@/api/apiProducts";
+import {productModule, ProductModuleType} from "@/store/productModule";
+import {appModule, AppModuleType} from "@/store/appModule";
 
 export default createStore<RootStateType>({
   modules: {
-    products: productModule
+    products: productModule,
+    app: appModule
   }
 })
 
-//types
-export type RootStateType = {
-  products: ProductType[]
-  dealProducts: ProductType[]
-  isLoading: boolean
-  isError: null | string
-  queryParams: QueryParamsType
-  nameSearch: string
-}
+//type
+export type RootStateType = ProductModuleType & AppModuleType

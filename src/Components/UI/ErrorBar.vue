@@ -10,9 +10,9 @@ import {computed} from "vue";
 
 const store = useStore()
 
-const error = computed(() => store.state.products.isError)
+const error = computed(() => store.state.app.isError)
 
-const closeErrorBar = () => store.commit('products/setIsError', null)
+const closeErrorBar = () => store.commit('app/setIsError', null)
 
 setTimeout(() => {
   closeErrorBar()

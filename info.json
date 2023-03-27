@@ -13,7 +13,7 @@
       "count": 3,
       "priceForItem": "11 000 ₽",
       "favourite": false,
-      "dealsCount": 41
+      "dealsCount": 42
     },
     {
       "id": "2",
@@ -301,5 +301,23 @@
       "dealsCount": 0
     }
   ],
-  "dealProducts": []
+  "dealProducts": [
+    {
+      "id": "1_42",
+      "title": "Доски",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjP_QLfewwDlXFe__VUQfVcp1Qfg2SJwvqvw&usqp=CAU",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favourite": false,
+      "dealsCount": 41,
+      "paid": false,
+      "favorite": false
+    }
+  ]
 }
