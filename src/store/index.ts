@@ -1,11 +1,12 @@
 import {createStore} from 'vuex'
-import {productModule, ProductModuleType} from "@/store/productModule";
-import {appModule, AppModuleType} from "@/store/appModule";
+import {ProductModuleType} from "@/store/products";
+import {products} from "@/store/products";
+import {app, AppModuleType} from "@/store/app";
 
 export default createStore<RootStateType>({
   modules: {
-    products: productModule,
-    app: appModule
+    products,
+    app
   }
 })
 
