@@ -2,6 +2,7 @@ import {apiProducts, ProductDealType, ProductType, QueryParamsType, UpdateProduc
 import {Module} from "vuex";
 import {RootStateType} from "@/store/index";
 
+
 export const productModule: Module<ProductModuleType, RootStateType> = {
   state: () => ({
     products: [] as ProductType[],
