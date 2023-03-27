@@ -6,6 +6,8 @@ export const productModule: Module<RootStateType, RootStateType> = {
   state: () => ({
     products: [] as ProductType[],
     dealProducts: [] as ProductDealType[],
+    isLoading: false,
+    isError: null,
     queryParams: {
       typeOfSale: null
     },
@@ -34,12 +36,17 @@ export const productModule: Module<RootStateType, RootStateType> = {
     setTypeOfSale(state, typeOfSale: string | null) {
       state.queryParams.typeOfSale = typeOfSale
       localStorage.setItem('typeOfSale', JSON.stringify(typeOfSale))
-
     },
     setNameSearch(state, nameSearch: string) {
       state.nameSearch = nameSearch
       localStorage.setItem('nameSearch', nameSearch)
     },
+    setIsLoading(state, isLoading: boolean) {
+      state.isLoading = isLoading
+    },
+    setIsError(state, isError: string) {
+      state.isError = isError
+    }
   },
   actions: {
     getFromLocalStorage({commit}) {
@@ -50,17 +57,23 @@ export const productModule: Module<RootStateType, RootStateType> = {
     },
     async fetchProducts({state, commit}) {
 
+      commit('setIsLoading', true)
+
       const queryParams = state.queryParams
 
       try {
         const res = await apiProducts.getProducts(queryParams)
         commit('setProducts', res.data)
       } catch (e) {
-        alert('error')
+        commit('setIsError', 'Error')
+      } finally {
+        commit('setIsLoading', false)
       }
 
     },
-    async updateProduct({state, dispatch}: any, payload: UpdateProductType) {
+    async updateProduct({state, commit, dispatch}: any, payload: UpdateProductType) {
+
+      commit('setIsLoading', true)
 
       const product = state.products.find((pr: ProductType) => pr.id === payload.id)
 
@@ -74,10 +87,14 @@ export const productModule: Module<RootStateType, RootStateType> = {
         await apiProducts.updateProduct(modelUpdateData, payload.id)
         dispatch('fetchProducts')
       } catch (e) {
-        alert('error')
+        commit('setIsError', 'Error')
+      } finally {
+        commit('setIsLoading', false)
       }
     },
     async fetchDealProducts({state, commit}) {
+
+      commit('setIsLoading', true)
 
       const queryParams = state.queryParams
 
@@ -85,11 +102,15 @@ export const productModule: Module<RootStateType, RootStateType> = {
         const res = await apiProducts.getDealProducts(queryParams)
         commit('setDealProducts', res.data)
       } catch (e) {
-        alert('error')
+        commit('setIsError', 'Error')
+      } finally {
+        commit('setIsLoading', false)
       }
 
     },
-    async createDealProduct({dispatch}, payload: ProductType) {
+    async createDealProduct({commit ,dispatch}, payload: ProductType) {
+
+      commit('setIsLoading', true)
 
       const dealProduct = {...payload, id: `${payload.id}_${(payload.dealsCount + 1)}`, paid: false, favorite: false}
 
@@ -97,12 +118,16 @@ export const productModule: Module<RootStateType, RootStateType> = {
         await apiProducts.createDealProduct(dealProduct)
         dispatch('updateProduct', {data: {dealsCount: payload.dealsCount + 1}, id: payload.id})
       } catch (e) {
-        alert('error')
+        commit('setIsError', 'Error')
+      } finally {
+        commit('setIsLoading', false)
       }
 
     },
 
-    async updateDealProduct({state, dispatch}: any, payload: UpdateProductType) {
+    async updateDealProduct({state, commit, dispatch}: any, payload: UpdateProductType) {
+
+      commit('setIsLoading', true)
 
       const dealProducts = state.dealProducts.find((pr: ProductType) => pr.id === payload.id)
 
@@ -115,7 +140,9 @@ export const productModule: Module<RootStateType, RootStateType> = {
         await apiProducts.updateDealProduct(modelUpdateData, payload.id)
         dispatch('fetchDealProducts')
       } catch (e) {
-        alert('error')
+        commit('setIsError', 'Error')
+      } finally {
+        commit('setIsLoading', false)
       }
 
     },

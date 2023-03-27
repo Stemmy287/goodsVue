@@ -12,8 +12,8 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": true,
-      "dealsCount": 28
+      "favorite": false,
+      "dealsCount": 35
     },
     {
       "id": "2",
@@ -314,7 +314,7 @@
       "price": "33 000 ₽",
       "count": 3,
       "priceForItem": "11 000 ₽",
-      "favorite": true,
+      "favorite": false,
       "dealsCount": 18,
       "paid": true
     },
@@ -396,7 +396,7 @@
       "priceForItem": "11 000 ₽",
       "favorite": false,
       "dealsCount": 22,
-      "paid": false
+      "paid": true
     },
     {
       "id": "1_24",
@@ -477,6 +477,118 @@
       "favorite": false,
       "dealsCount": 27,
       "paid": true
+    },
+    {
+      "id": "1_29",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 28,
+      "paid": false
+    },
+    {
+      "id": "1_30",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 29,
+      "paid": false
+    },
+    {
+      "id": "1_31",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 30,
+      "paid": false
+    },
+    {
+      "id": "1_32",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 31,
+      "paid": false
+    },
+    {
+      "id": "1_33",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 32,
+      "paid": false
+    },
+    {
+      "id": "1_34",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 33,
+      "paid": false
+    },
+    {
+      "id": "1_35",
+      "title": "копавс",
+      "img": "https://i.pinimg.com/originals/55/36/c8/5536c8edc514d16064a65f3e20d8e181.jpg",
+      "description": "Пиломатериалы брус доска. Распродажа пиломатериалов в связи закрытием ЛЕСО-БАЗЫ! Успейте приобрести пиломатериал со скидками до закрытия 01.06.2022 !",
+      "salesman": "Торговый Дом ГОСТ",
+      "geo": "Санкт-Петербург, Красное Село",
+      "typeOfProduct": "Стройматериалы",
+      "typeOfSale": "Разовая продажа",
+      "price": "33 000 ₽",
+      "count": 3,
+      "priceForItem": "11 000 ₽",
+      "favorite": false,
+      "dealsCount": 34,
+      "paid": false
     }
   ]
 }

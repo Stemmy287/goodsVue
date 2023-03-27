@@ -9,7 +9,6 @@ export const apiProducts = {
     return instance.get<ProductType[]>('products', {params: data})
   },
   updateProduct(data: ProductType, id: string) {
-    console.log(data)
     return instance.patch<'', AxiosResponse<ProductType>, ProductType>(`products/${id}`, data)
   },
   getDealProducts(data: QueryParamsType) {

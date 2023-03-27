@@ -12,6 +12,8 @@ export default createStore<RootStateType>({
 export type RootStateType = {
   products: ProductType[]
   dealProducts: ProductType[]
+  isLoading: boolean
+  isError: null | string
   queryParams: QueryParamsType
   nameSearch: string
 }
