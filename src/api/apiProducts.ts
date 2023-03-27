@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from "axios";
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/'
+  baseURL: 'https://test-api-goods-git-main-stemmy287.vercel.app/'
 })
 
 export const apiProducts = {

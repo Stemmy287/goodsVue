@@ -22,7 +22,6 @@
 <script setup>
 import BaseIcon from  "@/Components/UI/BaseIcon.vue"
 
-// eslint-disable-next-line no-undef
 defineProps({
   productInfoItem: {
     type: Object,

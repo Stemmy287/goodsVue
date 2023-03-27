@@ -12,7 +12,6 @@ import {PropType} from "vue";
 import ProductInfo from "@/Components/ProductItem/ProductItemBody/ProductInfo.vue";
 import ProductBuyBlock from "@/Components/ProductItem/ProductItemBody/ProductBuyBlock.vue";
 
-// eslint-disable-next-line no-undef
 const props = defineProps({
   product: {
     type: Object as PropType<ProductDealType>,

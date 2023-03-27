@@ -45,7 +45,7 @@
 
 <script setup lang="ts">
 
-// eslint-disable-next-line no-undef
+
 defineProps({
   name: {
     type: String,

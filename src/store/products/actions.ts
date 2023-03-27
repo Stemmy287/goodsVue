@@ -34,7 +34,7 @@ export const actions: ActionTree<ProductModuleType, RootStateType> = {
     const product = state.products.find((pr: ProductType) => pr.id === payload.id)
 
     if (!product) {
-      alert('product not found')
+      commit('app/setIsError', 'Product not found', {root: true})
     }
 
     const modelUpdateData = {...product, ...payload.data}
@@ -88,7 +88,7 @@ export const actions: ActionTree<ProductModuleType, RootStateType> = {
     const dealProducts = state.dealProducts.find((pr: ProductType) => pr.id === payload.id)
 
     if (!dealProducts) {
-      alert('product not found')
+      commit('app/setIsError', 'Product not found', {root: true})
     }
     const modelUpdateData = {...dealProducts, ...payload.data}
 

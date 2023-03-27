@@ -452,7 +452,7 @@
       "priceForItem": "11 000 ₽",
       "favourite": false,
       "dealsCount": 44,
-      "paid": false,
+      "paid": true,
       "favorite": false
     }
   ]

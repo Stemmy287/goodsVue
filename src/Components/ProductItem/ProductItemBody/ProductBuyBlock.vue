@@ -36,14 +36,12 @@
 
 <script setup lang="ts">
 
-// eslint-disable-next-line no-undef
 import {useStore} from "vuex";
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 import MyButton from "@/Components/UI/MyButton.vue"
 import {ProductDealType, ProductType, UpdateProductType} from "@/api/apiProducts";
 import {PropType} from "vue";
 
-// eslint-disable-next-line no-undef
 const props = defineProps({
   product: {
     type: Object as PropType<ProductDealType>,

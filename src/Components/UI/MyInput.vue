@@ -10,11 +10,11 @@
 <script setup lang="ts">
 import BaseIcon from "@/Components/UI/BaseIcon.vue";
 
-// eslint-disable-next-line no-undef
+
 defineProps({
   modelValue: String
 })
-// eslint-disable-next-line no-undef
+
 const emit = defineEmits(['update:modelValue'])
 
 const updateInput = (e: { currentTarget: { value: string } }) => emit('update:modelValue', e.currentTarget.value)
